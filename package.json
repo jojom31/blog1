@@ -1,0 +1,26 @@
+{
+  "name": "blog1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "db:create": "createdb blog1",
+    "db:destroy": "dropdb blog1",
+    "db:init": "psql -f schema.sql User",
+    "db:seed": "psql -f seed.sql User",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.3",
+    "express-session": "^1.17.1",
+    "pg-promise": "^10.9.2"
+  }
+}
